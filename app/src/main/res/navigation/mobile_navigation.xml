@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.android.kubrautman.navigationcontroller.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_fragmentLynna"
+            app:destination="@id/fragmentLynna" />
+        <action
+            android:id="@+id/action_mainFragment_to_fragmentRhaegar"
+            app:destination="@id/fragmentRhaegar" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentLynna"
+        android:name="com.android.kubrautman.navigationcontroller.FragmentLynna"
+        android:label="lynna_fragment"
+        tools:layout="@layout/lynna_fragment" >
+        <action
+            android:id="@+id/action_fragmentLynna_to_fragmentJonSnow"
+            app:destination="@id/fragmentJonSnow" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentRhaegar"
+        android:name="com.android.kubrautman.navigationcontroller.FragmentRhaegar"
+        android:label="rhaegar_fragment"
+        tools:layout="@layout/rhaegar_fragment" >
+        <action
+            android:id="@+id/action_fragmentRhaegar_to_fragmentJonSnow"
+            app:destination="@id/fragmentJonSnow" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentJonSnow"
+        android:name="com.android.kubrautman.navigationcontroller.FragmentJonSnow"
+        android:label="jon_snow_fragment"
+        tools:layout="@layout/jon_snow_fragment" >
+        <argument
+            android:name="whoami"
+            app:argType="string"
+            android:defaultValue="No one" />
+    </fragment>
+</navigation>
